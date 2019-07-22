@@ -7,7 +7,7 @@ resource "aws_dlm_lifecycle_policy" "this" {
   state              = "${var.state}"
 
   policy_details {
-    resource_types = ["VOLUME"] #VOLUME is the only option currently
+    resource_types = ["INSTANCE"] #VOLUME is the only option currently
 
     schedule {
       name = "${var.name}"
