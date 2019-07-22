@@ -30,7 +30,7 @@ resource "aws_dlm_lifecycle_policy" "this" {
     }
 
     target_tags = {
-      "${var.target_tags_key}" = "${var.target_tags_value}"
+      ${var.target_tags_key} = "${var.target_tags_value}"
     }
   }
 }
