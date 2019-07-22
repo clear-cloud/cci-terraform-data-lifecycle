@@ -5,7 +5,6 @@ variable "retention" {
   default = "7"
 }
 variable "target_tags_value" {}
-variable "target_tags_key" {}
 variable "state" {
   default = "ENABLED"
 }
