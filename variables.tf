@@ -2,7 +2,7 @@ variable "interval" {
   default = "24"
 }
 variable "retention" {
-  default = "24"
+  default = "7"
 }
 variable "target_tags_value" {}
 variable "target_tags_key" {}
