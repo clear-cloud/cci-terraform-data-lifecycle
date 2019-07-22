@@ -7,14 +7,14 @@ resource "aws_dlm_lifecycle_policy" "this" {
   state              = "${var.state}"
 
   policy_details {
-    resource_types = ["VOLUME"]  #VOLUME is the only option currently
+    resource_types = ["VOLUME"] #VOLUME is the only option currently
 
     schedule {
       name = "${var.name}"
 
       create_rule {
         interval      = "${var.interval}"
-        interval_unit = "HOURS" #HOURS is the only option currently
+        interval_unit = "HOURS"           #HOURS is the only option currently
         times         = ["${var.times}"]
       }
 
@@ -29,8 +29,6 @@ resource "aws_dlm_lifecycle_policy" "this" {
       copy_tags = "${var.copy_tags}"
     }
 
-    target_tags = {
-      environment = "${var.target_tags_value}"
-    }
+    target_tags = "${var.target_tags_map}"
   }
 }
