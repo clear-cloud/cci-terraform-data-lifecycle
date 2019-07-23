@@ -23,6 +23,8 @@ resource "aws_dlm_lifecycle_policy" "this" {
       }
 
       tags_to_add = {
+        instance-id     = "$(instance-id)"
+        timestamp       = "$(timestamp)"
         SnapshotCreator = "Data lifecycle manager"
       }
 
