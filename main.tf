@@ -7,7 +7,7 @@ resource "aws_dlm_lifecycle_policy" "this" {
   state              = "${var.state}"
 
   policy_details {
-    resource_types = ["INSTANCE"] 
+    resource_types = ["INSTANCE"]
 
     schedule {
       name = "${var.name}"
@@ -23,6 +23,7 @@ resource "aws_dlm_lifecycle_policy" "this" {
       }
 
       tags_to_add = {
+        timestamp       = "$$(timestamp)"
         instance-id     = "$$(instance-id)"
         SnapshotCreator = "Data lifecycle manager"
       }
