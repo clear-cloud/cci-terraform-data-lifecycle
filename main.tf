@@ -22,11 +22,11 @@ resource "aws_dlm_lifecycle_policy" "this" {
         count = "${var.retention}"
       }
 
-      tags_to_add = {
+      tags_to_add = [{
         instance-id     = "$$(instance-id)"
         timestamp       = "$$(timestamp)"
         SnapshotCreator = "Data lifecycle manager"
-      }
+      }]
 
       copy_tags = "${var.copy_tags}"
     }
